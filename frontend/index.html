@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Favorite Movie Stars Cards!</title>
+
+    <link rel="stylesheet" href="src/index.css">
+  </head>
+  <body>
+
+    <h4 style='text-align:center' >MovieStar needs your help! <button id='new-actor-btn'>Add a new actor card!</button></h4>
+
+    <div id='actor-header'>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-HQDdwSeZ-v9GT5vFtAViOyK8hTg4hyH6bxGs84DCxw9OotSt" alt="actor-header">
+    </div>
+
+    <div class="container">
+      <form class="add-actors-form" >
+        <h3>Create a new Actor Card!</h3>
+
+        <input id ="new-name" type="text" name="name" value="" placeholder="Enter a actor's name..." class="input-text">
+        <br>
+        <input id="new-img" type="text" name="image" value="" placeholder="Enter a actor's image URL..." class="input-text">
+        <br>
+        <input id= "new-nat" type="text" name="actor-nat" value="" placeholder="Enter a actor's nationality" class="input-text">
+        <br>
+        <input type="submit" name="submit" value="Create New Actor Card" class="submit">
+      </form>
+    </div>
+
+
+    <div id="actors-collection">
+    </div>
+
+  <div class="edit-container">
+    <form class="edit-actor-form">
+      <h3>Edit Actor Card!</h3>
+
+      <input id ="edit-name" type="text" name="edit-name" value="" placeholder="Enter actor's new name..." class="input-text">
+      <br>
+      <input id="edit-img" type="text" name="edit-image" value="" placeholder="Enter actor's new image URL..." class="input-text">
+      <br>
+      <input id= "edit-nat" type="text" name="edit-nat" value="" placeholder="Enter actor's new nationality" class="input-text">
+      <br>
+      <input type="submit" name="submit" value="Edit Actor Card" class="submit">
+    </form>
+  </div>
+
+
+
+
+    <script type="text/javascript" src="src/index.js" defer></script>
+  </body>
+</html>

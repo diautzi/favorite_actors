@@ -1,0 +1,1086 @@
+  [1m[35m (3142.6ms)[0m  [1m[35mCREATE DATABASE "favorite_actors_development" ENCODING = 'unicode'[0m
+  ↳ /Users/dia_utzi/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (504.5ms)[0m  [1m[35mCREATE DATABASE "favorite_actors_test" ENCODING = 'unicode'[0m
+  ↳ /Users/dia_utzi/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (822.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/dia_utzi/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (174.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /Users/dia_utzi/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (49.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8240816858576314950)[0m
+  ↳ /Users/dia_utzi/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (51.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/dia_utzi/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateActors (20190523173903)
+  [1m[35m (72.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/dia_utzi/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (196.5ms)[0m  [1m[35mCREATE TABLE "actors" ("id" bigserial primary key, "name" character varying, "pic_url" character varying, "age" integer, "nationality" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190523173903_create_actors.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (79.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190523173903"]]
+  ↳ /Users/dia_utzi/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/dia_utzi/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (21.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/dia_utzi/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/dia_utzi/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Create (33.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-05-23 17:42:47.065195"], ["updated_at", "2019-05-23 17:42:47.065195"]]
+  ↳ /Users/dia_utzi/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/dia_utzi/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(8240816858576314950)[0m
+  ↳ /Users/dia_utzi/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (17.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/dia_utzi/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (5.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActor Create (287.0ms)[0m  [1m[32mINSERT INTO "actors" ("name", "age", "nationality", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jenniffer Lawrance"], ["age", 30], ["nationality", "USA"], ["created_at", "2019-05-23 17:45:48.384212"], ["updated_at", "2019-05-23 17:45:48.384212"]]
+  [1m[35m (188.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActor Load (34.7ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/" for ::1 at 2019-05-23 12:59:45 -0500
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/dia_utzi/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/dia_utzi/.rvm/gems/ruby-2.6.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/dia_utzi/.rvm/gems/ruby-2.6.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (174.7ms)
+Completed 200 OK in 273ms (Views: 216.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api_v1_actors" for ::1 at 2019-05-23 13:00:45 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api_v1_actors"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 13:01:06 -0500
+Processing by Api::V1::ActorsController#index as HTML
+  [1m[36mActor Load (104.7ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 457ms (Views: 213.8ms | ActiveRecord: 145.3ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 13:01:14 -0500
+Processing by Api::V1::ActorsController#index as HTML
+  [1m[36mActor Load (2.9ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 5ms (Views: 2.0ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/api/v1/actors" for ::1 at 2019-05-23 15:13:02 -0500
+Processing by Api::V1::ActorsController#create as JSON
+  Parameters: {"name"=>"", "pic_url"=>"", "likes"=>0, "actor"=>{"name"=>"", "pic_url"=>""}}
+Completed 500 Internal Server Error in 420ms (ActiveRecord: 269.3ms)
+
+
+  
+NameError (undefined local variable or method `actor_params' for #<Api::V1::ActorsController:0x00007fa9679661e0>
+Did you mean?  actors_params):
+  
+app/controllers/api/v1/actors_controller.rb:10:in `create'
+Started POST "/api/v1/actors" for ::1 at 2019-05-23 15:13:46 -0500
+Processing by Api::V1::ActorsController#create as JSON
+  Parameters: {"name"=>"Brad Pitt", "pic_url"=>"http://www.gstatic.com/tv/thumb/persons/1366/1366_v9_bb.jpg", "likes"=>0, "actor"=>{"name"=>"Brad Pitt", "pic_url"=>"http://www.gstatic.com/tv/thumb/persons/1366/1366_v9_bb.jpg"}}
+Completed 500 Internal Server Error in 241ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `actor_params' for #<Api::V1::ActorsController:0x00007fa964f48f48>
+Did you mean?  actors_params):
+  
+app/controllers/api/v1/actors_controller.rb:10:in `create'
+Started GET "/actors" for ::1 at 2019-05-23 15:39:50 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/actors"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/actors" for ::1 at 2019-05-23 15:40:31 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/actors"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/actors" for ::1 at 2019-05-23 15:40:57 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/actors"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 15:42:21 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (14.0ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 111ms (Views: 58.7ms | ActiveRecord: 48.7ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 15:44:51 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (6.1ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 18ms (Views: 10.0ms | ActiveRecord: 6.1ms)
+
+
+Started POST "/api/v1/actors" for ::1 at 2019-05-23 15:45:23 -0500
+Processing by Api::V1::ActorsController#create as JSON
+  Parameters: {"name"=>"", "image"=>"", "likes"=>0, "actor"=>{"name"=>""}}
+Completed 500 Internal Server Error in 320ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `actor_params' for #<Api::V1::ActorsController:0x00007fa964e3aea8>
+Did you mean?  actors_params):
+  
+app/controllers/api/v1/actors_controller.rb:10:in `create'
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 15:45:45 -0500
+Processing by Api::V1::ActorsController#index as HTML
+  [1m[36mActor Load (0.8ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 15:47:05 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (0.6ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/api/v1/actors1" for ::1 at 2019-05-23 15:47:10 -0500
+  
+ActionController::RoutingError (No route matches [PATCH] "/api/v1/actors1"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 15:47:26 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (0.6ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 15:47:39 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (1.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 15:50:19 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (10.0ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 25ms (Views: 12.3ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 15:50:59 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (0.9ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 15:51:30 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (2.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 15:51:32 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (8.0ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 13ms (Views: 4.3ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 15:51:51 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (10.8ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 19ms (Views: 7.5ms | ActiveRecord: 10.8ms)
+
+
+Started POST "/api/v1/actors" for ::1 at 2019-05-23 15:53:13 -0500
+Processing by Api::V1::ActorsController#create as JSON
+  Parameters: {"name"=>"Brad Pitt", "image"=>"http://www.gstatic.com/tv/thumb/persons/1366/1366_v9_bb.jpg", "likes"=>0, "actor"=>{"name"=>"Brad Pitt"}}
+Completed 500 Internal Server Error in 293ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `actor_params' for #<Api::V1::ActorsController:0x00007fa964edb510>
+Did you mean?  actors_params):
+  
+app/controllers/api/v1/actors_controller.rb:10:in `create'
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 15:53:23 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (0.8ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 15:55:49 -0500
+Processing by Api::V1::ActorsController#index as HTML
+  [1m[36mActor Load (1.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 21ms (Views: 15.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 15:56:02 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (1.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 15:57:32 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (0.9ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/v1/actors" for ::1 at 2019-05-23 15:58:01 -0500
+Processing by Api::V1::ActorsController#create as JSON
+  Parameters: {"name"=>"Brad Pitt", "pic_url"=>"http://www.gstatic.com/tv/thumb/persons/1366/1366_v9_bb.jpg", "nationality"=>"USA", "likes"=>0, "actor"=>{"name"=>"Brad Pitt", "pic_url"=>"http://www.gstatic.com/tv/thumb/persons/1366/1366_v9_bb.jpg", "nationality"=>"USA"}}
+Completed 500 Internal Server Error in 384ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `actor_params' for #<Api::V1::ActorsController:0x00007fa964f58fb0>
+Did you mean?  actors_params):
+  
+app/controllers/api/v1/actors_controller.rb:10:in `create'
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 15:58:07 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (2.8ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 13ms (Views: 9.5ms | ActiveRecord: 2.8ms)
+
+
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActor Create (35.5ms)[0m  [1m[32mINSERT INTO "actors" ("name", "pic_url", "nationality", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Brad Pitt"], ["pic_url", "http://www.gstatic.com/tv/thumb/persons/1366/1366_v9_bb.jpg"], ["nationality", "usa"], ["created_at", "2019-05-23 21:02:30.485207"], ["updated_at", "2019-05-23 21:02:30.485207"]]
+  [1m[35m (28.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 16:02:36 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (1.7ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 55ms (Views: 47.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 16:04:20 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (2.1ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 203ms (Views: 200.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 16:04:32 -0500
+Processing by Api::V1::ActorsController#index as HTML
+  [1m[36mActor Load (2.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 2.2ms)
+
+
+  [1m[36mActor Destroy (56.8ms)[0m  [1m[31mDELETE FROM "actors" WHERE "actors"."id" = $1[0m  [["id", 2]]
+  [1m[36mActor Load (9.0ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" ORDER BY "actors"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActor Destroy (1.7ms)[0m  [1m[31mDELETE FROM "actors" WHERE "actors"."id" = $1[0m  [["id", 1]]
+  [1m[36mActor Load (0.8ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 16:05:31 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (0.7ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 16:08:10 -0500
+Processing by Api::V1::ActorsController#index as HTML
+  [1m[36mActor Load (4.5ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 26ms (Views: 16.1ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 16:08:15 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (0.6ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mActor Load (1.7ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActor Create (2.3ms)[0m  [1m[32mINSERT INTO "actors" ("name", "pic_url", "nationality", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Brad Pitt"], ["pic_url", "https://m.media-amazon.com/images/M/MV5BMjA1MjE2MTQ2MV5BMl5BanBnXkFtZTcwMjE5MDY0Nw@@._V1_UX214_CR0,0,214,317_AL_.jpg"], ["nationality", "usa"], ["created_at", "2019-05-23 21:11:49.167071"], ["updated_at", "2019-05-23 21:11:49.167071"]]
+  [1m[35m (18.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 16:12:09 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (1.6ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 37ms (Views: 28.8ms | ActiveRecord: 1.6ms)
+
+
+  [1m[35m (3.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActor Create (208.7ms)[0m  [1m[32mINSERT INTO "actors" ("name", "pic_url", "nationality", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jennifer Lawrence"], ["pic_url", "data:image/jpeg;base64,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"], ["nationality", "usa"], ["created_at", "2019-05-23 21:36:08.525231"], ["updated_at", "2019-05-23 21:36:08.525231"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 16:36:39 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (4.1ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 22ms (Views: 14.1ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/api/v1/actors" for ::1 at 2019-05-23 16:38:43 -0500
+Processing by Api::V1::ActorsController#create as JSON
+  Parameters: {"name"=>"Tom Cruise", "pic_url"=>"data:image/jpeg;base64,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", "nationality"=>"USA", "likes"=>0, "actor"=>{"name"=>"Tom Cruise", "pic_url"=>"data:image/jpeg;base64,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", "nationality"=>"USA"}}
+Completed 500 Internal Server Error in 343ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `actor_params' for #<Api::V1::ActorsController:0x00007fa964c465e8>
+Did you mean?  actors_params):
+  
+app/controllers/api/v1/actors_controller.rb:10:in `create'
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 16:39:00 -0500
+Processing by Api::V1::ActorsController#index as HTML
+  [1m[36mActor Load (3.5ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 8ms (Views: 3.7ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 16:40:13 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (2.6ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 7ms (Views: 3.8ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 16:48:35 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (2.1ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 20ms (Views: 13.9ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/api/v1/actors" for ::1 at 2019-05-23 16:52:04 -0500
+Processing by Api::V1::ActorsController#create as JSON
+  Parameters: {"name"=>"", "pic_url"=>"", "nationality"=>"", "likes"=>0, "actor"=>{"name"=>"", "pic_url"=>"", "nationality"=>""}}
+Completed 500 Internal Server Error in 328ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `actor_params' for #<Api::V1::ActorsController:0x00007fa964e0d6d8>
+Did you mean?  actors_params):
+  
+app/controllers/api/v1/actors_controller.rb:10:in `create'
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 16:54:11 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (8.7ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 141ms (Views: 77.9ms | ActiveRecord: 36.9ms)
+
+
+Started POST "/api/v1/actors" for ::1 at 2019-05-23 16:54:54 -0500
+Processing by Api::V1::ActorsController#create as JSON
+  Parameters: {"name"=>"Tom Cruise", "pic_url"=>"data:image/jpeg;base64,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", "nationality"=>"USA", "likes"=>0, "actor"=>{"name"=>"Tom Cruise", "pic_url"=>"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTEhIWFRUXGBUYGBUXGBUVFRcXGBUXFxUYGBcYHSggGBolHRUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGhAQGi0dHx0rLS0tKystLS0rLS0tLS0tLS0tLS0rLSstKy0tLSstLS0tLS0tLS0tLS0tLTctLS03Lf/AABEIAREAuAMBIgACEQEDEQH/xAAcAAAABwEBAAAAAAAAAAAAAAAAAQIEBQYHAwj/xABEEAABAgMFBQUECAIKAwEAAAABAAIDBBEFEiExQQYiUWFxBxOBkaEyQrHwFDNDUmLB0eEjJDQ1U3OCg6KywvFjcpIV/8QAGQEAAwEBAQAAAAAAAAAAAAAAAAECAwQF/8QAIhEAAgICAgICAwAAAAAAAAAAAAECEQMxEiEEQTJREyJh/9oADAMBAAIRAxEAPwDTkEEFuZACWkJaAAjQQQASCNyJAASgkpvHnmMFXvaxvFx+CAHaJQ0TaaXbq9wzN1jsBxNdE4si3paZLmwIzXObmw7rh4H8krHRIokstPBJTEGEsJASwgAII0RQASMIqI0AGjARJQSAJBGQggBmgjIRJgBLSQlBABoAJESK1jXPe4NY0Fz3E0DWgVJJKyLbbtRvVhSTqA++Nerhj4DzOSTlQ0jWpiZhwzR8VjDwc5oJ8Cao2xmkXg4EV9oEEea8uOtKK+t81xxNGg+JAqU8lbQLMTEfn7JJunqK0WfNlcDZtodqTAj+3WGQ5pYKU3aUdXiTeHgqPaW3Dy8ubdLjm5wJDB9yG2tBhm7Mqj/SXPLg1xuk1NTgPPII4cuCWgb3A5A8xy5qW2xqNE3H2qixN3vCWVqGDBvkBj4pMxbs1QHvGtoQWlrWNc0jgRkomJgaAVPLAD9UymInF1TwGQSLLVJ7dTrHVfMviNri2+WHwcAaeIK0zZTtGl4zmwo0Whd7L3gNIP3Xkbp5OAHRYK2Lzx80LwOTQPRNNolqz1vTy0Oh6cUYXnfZPbSflRdhRS+G37GJRzMxk47zegK2PYzbWXtBpApBjt9qC40cebK+0FopkONFmQQKCskJAIIwEgDARoBGgAkEaNAFS2Stx801xeKUVgVK7M/q39SrqhaBkPtRarpaF3jBXGlFWpbbaM5zW3BvEDPiVLdof9G8VmM3aQgNv5uAq0VAx0JUydFRRKdse1piBklBeaYPjXTQE03WOOuJrTosvhFozFeNEmamnPe57jVzjVxpgSuN8rNlpEqIrfdGfFN5p5OBwI04hcpaOAcRX4JcWE52I+QkUcu+pTDAaJ9CmSGPe41dQDqTgB0AUY9lCjL6tp+KvogBxKMdErvUaBUk+gCW2C2tBpnT9eKZ3zQNHyU6mn0DYTdMXHUk8TyTEFn7La0zOniUh7qa1XO/Tdz5afunzGuAF3PwNEBY2ESudfVPZacIc1wJvNIuuGDmkZEFNohf7xXPviNPJKgN62T7QXTcSHBcyjyACT71BQnqp3afaF8s9rQ0GvNee5CfILXBxDmkEGtCCFqlp202bgwYw9oNuvGdHAK0/RDRJP2+iD7MeaXC28iH7MearVlWd9IjCFepXVWuHsCR9t6BVTYiU2d2lfMRbhaBhVWcKt2DsyZeLfL64UorIqSEw0EEECM97M/q4nVXVUrsz+ridVdULQMq/aJ/Rh1CxTagglrKkYEu/LxW2dog/lvEfFef7fmb0R2NcacuiiZcSNiOGi5goyOCNoUFoNpTqHGwpQ18/gmwBK7QWEZDwKQxLoY4+iUJY0qMeidCWc4gsYa8M12Mq+oaW3XajTFLkh8WNJaDdeKiuZHWmHqnDZbAkC9nU8SdE8dJuDugwPUfupazrPPcvY32ogaWnQaPrzyUuSRSgylZHLFOC8hta9Apy0LCbDIbWriMTwObj+QUbMloF2grXh+apSTI40R8Ik71annijLMK4+C7Po7P2Rk0alBgOraD0HgqEcoT6Z/urBYFp908VJuOwP6nmoF8PUea6SsUg0pVAGt7NT8OFMNiuO5TMLQW7Xyp95ZDYzHxYbAxpLsgByU3BsSYGcFytWZtGp2Za8KPXuzWmafhVDYGTiQ+8vsLa5VVvVokNBEjQBn3ZiP4cTqrrdKxaRtqNLgiE6lfFLjbazg+0HkpsdF67Sq/RTReco2fz4rfNsJlzrLbEcauIqetFgKmTtlRELvLwS4gNFSuCl7GbjnQfFRJ0jSKt0SdnWEPfxPLJTEGyoerQu8oAB5JyMCuGWRs9CGNJDmUs9lN0Ac05/8AyWmhwJGNaISb+ak4Ki2y3EYssVqfwbKY27TRd4TsbvFP+7AwVpkOKK1PWBeLnNoSdCq5G2PeSSRlotFLea5vT5MXBGUzOzbmCuZ4cOiiJltMCD8Fr03CafaFVCz+zjYmNB01VxytbIniT0Ze92iEAUKmLfsruXKBGJxK6k7VnJJV0av2Vxg6MwDSv/a2qnJebdiJ18B7nQzvUqDpzV7hbYTZ94eS0jKjGRq9EZVJ2Qt2PHj3IjqtpwV3IVp2SFRBGggCjHYCXOrvNc39nUscy7zVxQTGVzaKwmukXwm43GOujUmmC8yt/wC+q9fwgNctei8kTZrEfQUF99AcwLxWc9lQGtFLWTn84KMcpWymVKyno2x/It8icuifPZio+yhUjlipWM3HELz5HooEJpBFFJysQprAGGSfQWUChFneE7eCed6SmstDzK7ALREtCu9OoSHPS2lJc1JsdHKq6grk4IVTTIkio7cwgWEjMLP2sGBWhbaijCeKoLW4gBdmJ9HFm2bFsPsU2LLtiF249uGV4Hh0zVjb2fQh77vNMOxG0xFkokA+3AiHDix+80061HgtBAXVGqOWWyBsPZZktE7xrycKUKsFUSMJkhoIIIAZoIIJgN7Rme6gRov3Ib3DqGmi8oPqTe1cST1JqV6l2mbWSmRxhu+C8wvh3cCMVjkl2kb44XFsaOGKtNlQKMGGKrsGBVwVmv3WCmdaeNFlkZri+yas9zWYkqbaWuFQarNmmO43QTXh+i6/SJiFhvDiud4rNlla9GkMaMqrtfosyZtDFHvlTFnbRuc0NecdMfzUvC0XHOn0aTKAXBz0STEBNMFDSE5eaKHwSocch1T0Uto1omXC6M6lci+qr89bIhuxrjkm7tsIYGRRTZLkolmDUVwqqHbG9g1viTgkSW1JL6ECvDQqvxtCeRNDvbSB/Lud93GqzhmJBHJadta8PknuGRp8VSNmbDfHJAyaKk8eS3jLjE5pxc5pI0PsLhuEaadTdcyGCdL2Jp6rXVU+zKTEKUcygBEQ1NMThlVWxdOJ3BM5s0eM2voNAIIwtDICCCCAGaCCCYHOYgh8N7D7zXD0XmjaWWLTCcc3tqfAr09COIXnLbyWc2aiQiCDBdEHK4XFzSPAhYZl2mdPjvqSIuwpS8S45DRTTIQv3SKg4YZ+qZ2HGHcimd51fRSsB29WgXNklTOjHHobzMpFuBsJlNL+NQOPVE3ZAxBvRXPOZJdh5FWiXiXhdPicx05ruZJwyIp4tPoVksrRq8XIp0TYQNFbxOHIY6cqKvxLBmWO3WXqcDhgtPbKimOfj+qaWo1rBhrh+6v8xn+FERsXOufg8UIw8Fc7UggwSNaEjjVVLZ1gEQnJW+OasWT7bN46MwtGSm3e0wgHLjTieCbx9nZgUu7xoMBXXMVWliDeFEGy0Rhqwt47wHxWsclGMsfIz+z5KKwViSfeAa1Id1oVZrNgy0YEsFHDNrhRzSMgQrBDjuGYA8lxfJQ71/3zm4GleqUsi9FRxtDPaCVrIxANKO8jij7P4FyWvUoXE8sKqWEuHw3QtHCnSqe/RwwshM9ljWsrxOAUydxoIKpNlw2dle7gNrm8l58cvQKSSWtoAOAASl6UFUUjzJS5SbYYRokaokCCCCAGaCCCYBgrLu2Wzbn80B9Yww3H8Qy9FqKj9obGhzktElouAeN12rHj2XDxUTjyVFwlxdnmywohF4aAt9QVZ4LccExtPZWZkHOZMtADiO7iAgtiAVqRjUZjNd5SPUgLhz2d+Bon5FTzHC7kq5LxBxUgJwAVJwXMmddD2PErkFB2oG+84V+apcWZfEBI3Wep/ZMDGDoV8gZGirZNneyZXfqDgrTMNwooqxIQuinAFS8XEVTSENpdpBrmngFdKJnGYbtRWulEwgWu+G/uo4xPsv0PLqkumCVk42EE1jUqu0OOHZGq4vNU2M6Q3YYnlUZqcsGXESIxujN49Bx8VBSkQAmvhrjoArts1Z7oTC+IKPfTDUN0qtcMHKa+jnzyUYP7JkokEa9E80JKCII6IEBBBBADRBEgmAaCCAQBmvbWcZP/ADf+KzqVY4vddzWl9tsH+DKxPuxHN821H+1Z7YJrEI5Liz7Z3ePoRITznVqMjRdzPXnfhHkSu9gyrYgeDmHOBGWAcaprtJIOlz3gBdBNMdWngeXNc6SbOvlSH/068CMqinoqhFnZiADCcN3GlciK6FO4NusHuFPXWpLRm3IrSAdTgRzC1iuO0Zy/dfq+x5svtLhdcp6d2gDGjAknJoxJ6BUuS2bJeO5mGEVzJoQOYKvElJysuPrRFiEb0Rxr4N4AKZKKdoqHOqZ0s2fiRBV0Iw2gYXji49FythoiMLSaHQ8CMijiWtB/tQmc5akMZOa46DUngs3/AApJrY1krTc13dRCWuHk4cQdVYIM4MOdAoV9niJCLnDIFzeLHDRPoUvgwHTHxUNobdlw2JH80cK0Y8446ihV6VK2Ah1ixH8GU8yP0V2K9Lx1UDzPIdzCRoka3MAAI0SMJABBGggBjeCIPUQ6f5pIn+aLHRN1RhRbJ5OGTYKdhRD9pVlmYs2M1oq+GWxmDWrK3gOrS4eKw2x50NisccnUXpSDGHWuBHELAO0jZkyM0Q36iPeiQTq3EXmHhQnDqsM0ORthnx6HcRvcTQeDSFH10ETXzUzGNWlrhUEHdOIPJVKzZv6RLmA40iN9knQjFp81J2PaHeMAdg8YO5EYLhcWmdyl9DeHKwYRLTCa5hIxpi3E1CschZstGhQW3W4XgQcyMaAqvzwocciusmaUcK4agq+VrstY1LXTLJI7BSr7xcS11TS4boHCoGaeyWxUuIW80d5xxIpwoU0krQLW7sUf4ga+a6R7RddI74Gv3Qa06lPpkcMt0mdJ6HJQLwMKGTui4GitQN3ooTZ/Z+EC6O6G0FxJa04hvPFd5eQFb7vXMqYB3fnJS31SL4qPu2NozABTAVz5hNL2KOZjCp4BCw5GJNxhCZkcXv0YzU/kFlGLk+hSkkrL/sHK3ZcxD9o406Nwr51VjKRChNY1rGCjWANA5AUSyvVjHikjypO5NgRI0FRIAjQAQQAYRI0EAZY+dPFATh4pjVGSs7NKJJloHinUC08VB1RtJRYUXWQnKnNZb2xz/ezLQ04Q2Bo4Vq4u/IeC6WztS8RWyku6jif4sQZsaMS1p0NMyq/tFWICWgmleJqEpS6ocI9lclZktcHtwIz6aqbkJsCMXA4PAPiM1WmOpinUOJkRgRppXks3GzZTo0F8IRIdaYhNoVmkZHBM7FtWoxz1HxU/JODjgc/RcTTTO6Mk1Zwhyb6ZLvDlog5KfgMbTPFFFYrEpDCVguOZT2K7BEx2CYWhPUwGLjkB8UooUmR9pTAGAz4LUNgJIQpJhDaPiEuefeONG1PIBZxJWbQmJE3naDQfutVs6OyC2BLvN172VZXIkCrmj8WNaLo8buTOXyeopEmjQQXYcQEAgEEAGggEEAGggggDHUCggFmahhRG0luiXYWMIMZwwGjPxHgeCRtHtC2WFxlHRiMBmGfidz4BZ4+K5zi5xLnEkknEkpATGx8sHzF4kkgOJrqTT9VqMgwYboqNKDJZRsxNd3MMdoTQ9Dh+YWuSWY4Fb4kmrIkVTtB2GHdunZNtABWNBGnGIwcOIWZB3BelpPDdORFKaEHAjmFjO3myhlpg3BRjyXN4Y5t6qcuOu0OEm+mVmXmi01rQ8R+as1k2zQUOI4j5wVQLCDQih5ro1nguWUFLZvCbjo1GDarDrQrubXA94dFmUB7zgHFSMO8Ri4n59Vi4V7OqM79FvmLdrusxd8E6syRNbz8XfOAUbs1ZdzfeMdG8Bx6q0ycB8R7YcNt57shw5ngAob9Ir+skdnbP7+Yaz3Gb8Q6ADIdSdOqc9ql4yv0iEbsSBFZEhu4EGnlQ+RVpkbPbKQO6aavdi9+pdr4aAKu7fkCz44Iwu09V6Pj4eMG37PNzZecutE1sltLDn4DYjDSKAO9h6h1MSOVVNLzTYlpRZdzIsB5a9hwOjh913FpW5bIbZwJ9oGEKOBvQXEYnUs+81NMlosiCFESZIYRogjQApEgggDFJ+0YUEViPA5DF3kqtau2TiC2XbcrUX3Yu8BkFWnuJNSSTqSak9TqkPWRqcnmpJJqTmTiSeZQBSiElIDpLjFbBslN97BhvOZF0/wDs3ArI4DFfezCaq6LAJzo9vUCjgPRb4XTomejTILdNRl+i7T9lwpqF3MdtRodWniFxhCo5j1/dSUu8GnH4rpq9mJm1udmcYi6G96wey9uERvDkQqFaWzseUeGTEMhrsGxKG6TwroeS9QSUTBd5yVhRmGHFhtiMObXAEeq5MkUjWOStnl2Wsl7nACgHEqyWfZTIYB9t/E5Dor7tH2euGMpRw1huIDgNKOOBHVc7C2EiuIMdwY0ZtYQ5zurxg3wXFPHKTO6OWCjdkTYtlRph12C2p9559hnU8eS0mw7DhybCGb8Q+3EOZ5DgOAUpJSUOCwQ4TQxoyA+J4nmkTZot8OFJ/wBOXNnc+lojZg1NfkKk9qkeknd+89o9a/kri59Ssx7Xp2pgQgdXPI5AUHxK9CXUWc62Z9LvzHoiLiCHNcWkGrXNwcDyK51Ad1QiFcRsX7Z/tbmYVGTcNswwYX27kYDmfZd5BaNYW3VnzdBDjhjz9nF3HV4CuB8F51JxSS0agJ2Jo9YltES847ObZTsmf4Mdz4esGIS+H4Vxb4LWtlO0qVmyIcX+WjZUef4bj+F+XgU1IlouqCMtQVCPIS6Oakwm1PJdixZGo2ohCh1K7ObRKgMw6oABFB1UvsfO91NwnHAFwb/9YfEhQ73VKVCqDWtCMuVMk06Yno9DQ2k14j1/dKEXHgeCjdlbYE1Dhkju4xYDcOUQDAvhnUV0zClZqHyofj+hXcmYD6QneePDintq27ClJaJMxjuMFaDNxPstHMnBVtla1GBCzvts2gc7uJNpo0DvXjiSS1lelHHxCyy6sqKtlPt/aKZno75iJFc0uwbDY5waxnusFDl8VPdnG3EazX3IhL5Qnfhk70OpxfD+JaM+qqFnnFdp7L5+SuY2o9by04yLDbFhOD2PaHNcDUFpxBUZacxoFmPYJtE4w40k81EPfhV0DibzRyrj4rQHAuct8MfZhLpgYNSsY7S5gvnyNGQ2N8TVxPqPJbtDl8Oi89bYx+8npl3/AJCBjoKD8leWX69DhshXNqirUIyku9CuU1EUQc1KCMhAxACFK4HFGEq7zxQBb9ke0Gak7rC7voIw7t5qWj8LtOiNU2iCBUhrcc08RwzC7QooOGvAruEh7AcD5oGIjMSiKNSKOGl8f6v3SmmuPx0QAhrdUYSnc0kBAGt9l/dTUo+Vijegvvw3tNIkO9iHMdmKOqrgREYO7mDfpg2OBSvARAMjzCybsstQQZ+G0ndjAwzwqcWHzAHit3mWBwLTqunG+jGS7K8IWPP48Fg/aHEMSfjv0vNYOQYwMHndJ8V6CjSjgN0XqGhbXGnFpOio/ars4x8mZy6GvY8h5GFYbjumnEFPL8Qi6ZjtnGqc2mKfn1TGSfvfrknlrRBdwIrShp+oXKbF07KGvgTEB7mFrZi/dccnNFW4f4gVt8nBq5VZ1kUs2zi0AOl4cvEr1a0xPMklXWTpcvfexHTRdEXUDGXbDmn3WkrzHPvvxoruMR5/1Fei9oZi5CedGsc7yaV5sbrzJPmonpFQCc1Jc1dMfnVBZFnAChxSiRxS3kDClemdEhrTqPnXDigAg3WnQJYh15BdWMA+cfnJLHT9ygYkNA/XmglPHqggBuQuThRdiuTxwQIUxcQMTz+K7tK5uCBhErkDiuhSCgBzLxSwh4NHMIcCOLSCPgvTNnzDYsGFGr7bGPw4kVP5rzLBK3DsjtMRpHuiaugOLKa3TvM9CfJaY3XRnNey2YAl17TLQczwWG9qm3n0ofQ5Y/y8N29E/tnjh+AHLjSqs/bLtUJdn0KXf/GiisZwzhwzk0HRzsfDqFibTiOAojLkvpBBD2G0MutIB95wOVBk0o7Ogw3OgiLhDdFDXkEAhhcKkVywPojmYgN4NBq7MngOC5zzaMa2mNCSeqyND12yVYGiGBWGGNaAcroaAPRILsboyypoobYe2PpVnSsetXGGGvP42bj/ADIJUtDOJW8F0YvZVu0icEOTjuP3QwdXOA/VYPCG6tS7ap6kCDC/tIhcejGn83BZczIJZd0XBdBA4pYCSEtpWRQgDHLD16JQRsGCJAC2jjgjAKQ6IB14Z+a5Qo7qkGhHL56IA761QSXnzRoAalE3PwQQQB0fkkaoIIAQ9IfkjQQMXLrU+wz6yb/yv+aCCqGyJ6M47Sv61nf7z/iFV2o0FD2UtD4aI7T9rwRoIGb52Jf1TD/vY3+5XZuZQQXTj+Jk9mPdtv1sr0ifFqokP2UEFGX5Fx0IQCCCyGKagEEEANYfvJwz2R86hBBACoyNBBAH/9k=", "nationality"=>"USA"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:11
+  [1m[36mActor Create (40.1ms)[0m  [1m[32mINSERT INTO "actors" ("name", "pic_url", "nationality", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Tom Cruise"], ["pic_url", "data:image/jpeg;base64,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"], ["nationality", "USA"], ["created_at", "2019-05-23 21:54:55.037308"], ["updated_at", "2019-05-23 21:54:55.037308"]]
+  ↳ app/controllers/api/v1/actors_controller.rb:11
+  [1m[35m (117.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:11
+Completed 200 OK in 167ms (Views: 1.5ms | ActiveRecord: 157.8ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 16:55:04 -0500
+Processing by Api::V1::ActorsController#index as HTML
+  [1m[36mActor Load (1.7ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 16:55:14 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (2.0ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 16:55:18 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (1.1ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 16:56:27 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (1.6ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 21ms (Views: 18.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 17:08:21 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (2.9ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 32ms (Views: 24.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 17:08:41 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (2.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 10ms (Views: 7.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 17:10:31 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (8.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 15ms (Views: 6.1ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 17:11:07 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (1.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 17:11:20 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (10.6ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 25ms (Views: 13.6ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 17:11:40 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (0.9ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 17:12:19 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (64.5ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 70ms (Views: 5.5ms | ActiveRecord: 64.5ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 17:12:53 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (1.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 17:13:09 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (1.0ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 17:23:43 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (2.0ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 23ms (Views: 16.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 17:24:23 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (1.6ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 17:24:23 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (9.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 15ms (Views: 5.3ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 17:24:47 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (8.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 14ms (Views: 5.1ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 17:24:55 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (67.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 73ms (Views: 5.2ms | ActiveRecord: 67.2ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 17:25:07 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (1.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 17:25:26 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (0.9ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 17:27:51 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (15.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 43ms (Views: 21.9ms | ActiveRecord: 15.4ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 17:29:24 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (3.6ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 12ms (Views: 6.8ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 17:29:40 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (3.0ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 9ms (Views: 5.1ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 17:30:20 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (1.1ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 17:58:24 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (1.9ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 21ms (Views: 14.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 17:58:54 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (1.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 17:59:32 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (0.7ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 17:59:45 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (19.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 26ms (Views: 5.7ms | ActiveRecord: 19.2ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 18:00:09 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (0.9ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 18:00:17 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (0.9ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 18:00:35 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (1.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 18:00:40 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (1.0ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 18:01:10 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (0.9ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 18:02:04 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (0.6ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 18:02:07 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (9.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 15ms (Views: 5.1ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 18:03:40 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (1.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 1.4ms)
+
+
+Started PATCH "/api/v1/actorsundefined" for ::1 at 2019-05-23 18:03:46 -0500
+  
+ActionController::RoutingError (No route matches [PATCH] "/api/v1/actorsundefined"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 18:03:46 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (7.1ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 12ms (Views: 4.0ms | ActiveRecord: 7.1ms)
+
+
+Started PATCH "/api/v1/actorsundefined" for ::1 at 2019-05-23 18:09:53 -0500
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 18:09:53 -0500
+Processing by Api::V1::ActorsController#index as */*
+  
+ActionController::RoutingError (No route matches [PATCH] "/api/v1/actorsundefined"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[36mActor Load (4.9ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 47ms (Views: 37.9ms | ActiveRecord: 4.9ms)
+
+
+Started PATCH "/api/v1/actorsundefined" for ::1 at 2019-05-23 18:11:10 -0500
+  
+ActionController::RoutingError (No route matches [PATCH] "/api/v1/actorsundefined"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 18:11:11 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (6.8ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 12ms (Views: 4.9ms | ActiveRecord: 6.8ms)
+
+
+Started PATCH "/api/v1/actorsundefined" for ::1 at 2019-05-23 18:14:03 -0500
+  
+ActionController::RoutingError (No route matches [PATCH] "/api/v1/actorsundefined"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 18:15:03 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (2.5ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 37ms (Views: 21.5ms | ActiveRecord: 2.5ms)
+
+
+Started PATCH "/api/v1/actorsundefined" for ::1 at 2019-05-23 18:15:14 -0500
+  
+ActionController::RoutingError (No route matches [PATCH] "/api/v1/actorsundefined"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 18:15:14 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (1.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/api/v1/actorsundefined" for ::1 at 2019-05-23 18:15:22 -0500
+  
+ActionController::RoutingError (No route matches [PATCH] "/api/v1/actorsundefined"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 18:15:22 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (2.8ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 7ms (Views: 4.0ms | ActiveRecord: 2.8ms)
+
+
+Started PATCH "/api/v1/actorsundefined" for ::1 at 2019-05-23 18:22:41 -0500
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 18:22:41 -0500
+  
+ActionController::RoutingError (No route matches [PATCH] "/api/v1/actorsundefined"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (15.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 39ms (Views: 19.9ms | ActiveRecord: 15.4ms)
+
+
+Started GET "/api/v1/actors/1" for ::1 at 2019-05-23 18:36:05 -0500
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for Api::V1::ActorsController):
+  
+actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/api/v1/actors" for ::1 at 2019-05-23 18:47:37 -0500
+Processing by Api::V1::ActorsController#create as JSON
+  Parameters: {"name"=>"Jackson ", "pic_url"=>"https://avatars1.githubusercontent.com/u/36776466?s=460&v=4", "nationality"=>"USA", "likes"=>0, "actor"=>{"name"=>"Jackson ", "pic_url"=>"https://avatars1.githubusercontent.com/u/36776466?s=460&v=4", "nationality"=>"USA"}}
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:11
+  [1m[36mActor Create (2.9ms)[0m  [1m[32mINSERT INTO "actors" ("name", "pic_url", "nationality", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jackson "], ["pic_url", "https://avatars1.githubusercontent.com/u/36776466?s=460&v=4"], ["nationality", "USA"], ["created_at", "2019-05-23 23:47:38.367916"], ["updated_at", "2019-05-23 23:47:38.367916"]]
+  ↳ app/controllers/api/v1/actors_controller.rb:11
+  [1m[35m (43.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:11
+Completed 200 OK in 73ms (Views: 3.1ms | ActiveRecord: 46.6ms)
+
+
+Started POST "/api/v1/actors" for ::1 at 2019-05-23 18:49:10 -0500
+Processing by Api::V1::ActorsController#create as JSON
+  Parameters: {"name"=>"Jose Elera", "pic_url"=>"https://avatars0.githubusercontent.com/u/170384?s=460&v=4", "nationality"=>"Peru", "likes"=>0, "actor"=>{"name"=>"Jose Elera", "pic_url"=>"https://avatars0.githubusercontent.com/u/170384?s=460&v=4", "nationality"=>"Peru"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:11
+  [1m[36mActor Create (31.1ms)[0m  [1m[32mINSERT INTO "actors" ("name", "pic_url", "nationality", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jose Elera"], ["pic_url", "https://avatars0.githubusercontent.com/u/170384?s=460&v=4"], ["nationality", "Peru"], ["created_at", "2019-05-23 23:49:10.626327"], ["updated_at", "2019-05-23 23:49:10.626327"]]
+  ↳ app/controllers/api/v1/actors_controller.rb:11
+  [1m[35m (10.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:11
+Completed 200 OK in 48ms (Views: 0.9ms | ActiveRecord: 41.4ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 18:56:12 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (14.1ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 27ms (Views: 12.3ms | ActiveRecord: 14.1ms)
+
+
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 19:05:40 -0500
+Processing by Api::V1::ActorsController#index as */*
+  [1m[36mActor Load (2.9ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 47ms (Views: 22.0ms | ActiveRecord: 2.9ms)
+
+
+Started PATCH "/api/v1/actorsundefined" for ::1 at 2019-05-23 19:11:34 -0500
+Started GET "/api/v1/actors" for ::1 at 2019-05-23 19:11:35 -0500
+Processing by Api::V1::ActorsController#index as */*
+  
+ActionController::RoutingError (No route matches [PATCH] "/api/v1/actorsundefined"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[36mActor Load (25.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/api/v1/actors_controller.rb:6
+Completed 200 OK in 44ms (Views: 18.2ms | ActiveRecord: 25.3ms)
+
+
